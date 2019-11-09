@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 定义 每隔10秒扫描该文件 -->
+<configuration scan="true" scanPeriod="10 seconds" debug="false">
+
+    <!-- 定义日志根目录 -->
+    <property name="ROOT_PATH" value="/home/jyapp"/>
+
+    <!-- 定义应用名称 -->
+    <property name="APP_NAME" value="rule-engine"/>
+
+    <!-- 定义日志输出目录 -->
+    <property name="LOG_HOME" value="${LOG_HOME:-/home/jyapp/microservice_logs}/${APP_NAME}"/>
+
+    <!-- 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 文件输出 -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_HOME}/${APP_NAME}_${HOSTNAME}_%d{yyyy-MM-dd}.log</FileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 设置业务代码的日志级别 -->
+    <logger name="org.huha" level="INFO"></logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+</configuration>

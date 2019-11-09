@@ -1,0 +1,17 @@
+es:
+ host:
+  list:
+    - 192.168.83.55:9200
+spring:
+ datasource:
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  url: jdbc:mysql://10.50.181.34:3306/lnantf?useUnicode=true&useSSL=false&characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+  username: lnantf
+  password: lnantf
+ jackson:
+  date-format: yyyy-MM-dd HH:mm:ss
+  time-zone: GMT+8
+
+
+swagger:
+ enable: true

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.huha.ruleengine.demo.faapplication.dao.FaApplicationMapper">
+    <resultMap id="FaApplicationDTO"
+               type="org.huha.ruleengine.demo.faapplication.dto.FaApplicationDTO">
+        <result property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="applicationNumber" column="APPLICATION_NUMBER" jdbcType="VARCHAR"/>
+        <result property="applicationType" column="APPLICATION_TYPE" jdbcType="VARCHAR"/>
+        <result property="auditStatus" column="AUDIT_STATUS" jdbcType="VARCHAR"/>
+        <result property="intoCreateTime" column="INTO_CREATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="familyIsKnown" column="FAMILY_IS_KNOWN" jdbcType="VARCHAR"/>
+        <result property="customerSource" column="CUSTOMER_SOURCE" jdbcType="VARCHAR"/>
+        <result property="customerChannel" column="CUSTOMER_CHANNEL" jdbcType="VARCHAR"/>
+        <result property="decision" column="DECISION" jdbcType="VARCHAR"/>
+        <result property="amountLimit" column="AMOUNT_LIMIT" jdbcType="VARCHAR"/>
+        <result property="loanType" column="LOAN_TYPE" jdbcType="VARCHAR"/>
+        <result property="loanPurpose" column="LOAN_PURPOSE" jdbcType="VARCHAR"/>
+        <result property="loanPurposeDetail" column="LOAN_PURPOSE_DETAIL" jdbcType="VARCHAR"/>
+        <result property="applyPeriod" column="APPLY_PERIOD" jdbcType="DECIMAL"/>
+        <result property="appProductType" column="APP_PRODUCT_TYPE" jdbcType="VARCHAR"/>
+        <result property="appProductName" column="APP_PRODUCT_NAME" jdbcType="VARCHAR"/>
+        <result property="prodMoneyType" column="PROD_MONEY_TYPE" jdbcType="VARCHAR"/>
+        <result property="prodServiceRate" column="PROD_SERVICE_RATE" jdbcType="VARCHAR"/>
+        <result property="isEms" column="IS_EMS" jdbcType="VARCHAR"/>
+        <result property="prodUrgentRate" column="PROD_URGENT_RATE" jdbcType="VARCHAR"/>
+        <result property="minAppAmount" column="MIN_APP_AMOUNT" jdbcType="DECIMAL"/>
+        <result property="maxAppAmount" column="MAX_APP_AMOUNT" jdbcType="DECIMAL"/>
+        <result property="monthPayment" column="MONTH_PAYMENT" jdbcType="DECIMAL"/>
+        <result property="actionDate" column="ACTION_DATE" jdbcType="TIMESTAMP"/>
+        <result property="fraudAlert" column="FRAUD_ALERT" jdbcType="VARCHAR"/>
+        <result property="triggeredRules" column="TRIGGERED_RULES" jdbcType="VARCHAR"/>
+        <result property="fraudScore" column="FRAUD_SCORE" jdbcType="SMALLINT"/>
+        <result property="actionTaken" column="ACTION_TAKEN" jdbcType="VARCHAR"/>
+        <result property="fraudType" column="FRAUD_TYPE" jdbcType="VARCHAR"/>
+        <result property="decisionReason" column="DECISION_REASON" jdbcType="VARCHAR"/>
+        <result property="fraudAlertTeam" column="FRAUD_ALERT_TEAM" jdbcType="VARCHAR"/>
+        <result property="fraudAlertUserId" column="FRAUD_ALERT_USER_ID" jdbcType="VARCHAR"/>
+        <result property="apprProductType" column="APPR_PRODUCT_TYPE" jdbcType="VARCHAR"/>
+        <result property="apprProductName" column="APPR_PRODUCT_NAME" jdbcType="VARCHAR"/>
+        <result property="agreeCode" column="AGREE_CODE" jdbcType="VARCHAR"/>
+        <result property="refuseReason" column="REFUSE_REASON" jdbcType="VARCHAR"/>
+        <result property="creditStart" column="CREDIT_START" jdbcType="DATE"/>
+        <result property="creditEnd" column="CREDIT_END" jdbcType="DATE"/>
+        <result property="intoCreditTime" column="INTO_CREDIT_TIME" jdbcType="TIMESTAMP"/>
+        <result property="userId" column="USER_ID" jdbcType="BIGINT"/>
+        <result property="creUserId" column="CRE_USER_ID" jdbcType="VARCHAR"/>
+        <result property="creditLastUserCode" column="CREDIT_LAST_USER_CODE" jdbcType="VARCHAR"/>
+        <result property="creditLastUserName" column="CREDIT_LAST_USER_NAME" jdbcType="VARCHAR"/>
+        <result property="auditConclusion" column="AUDIT_CONCLUSION" jdbcType="VARCHAR"/>
+        <result property="callType" column="CALL_TYPE" jdbcType="VARCHAR"/>
+        <result property="caseNumber" column="CASE_NUMBER" jdbcType="VARCHAR"/>
+        <result property="matchingNumber" column="MATCHING_NUMBER" jdbcType="BIGINT"/>
+        <result property="warningMinutes" column="WARNING_MINUTES" jdbcType="SMALLINT"/>
+        <result property="expiryMinutes" column="EXPIRY_MINUTES" jdbcType="SMALLINT"/>
+        <result property="customerManagerCode" column="CUSTOMER_MANAGER_CODE" jdbcType="VARCHAR"/>
+        <result property="customerManagerName" column="CUSTOMER_MANAGER_NAME" jdbcType="VARCHAR"/>
+        <result property="customerManagerMobilePhone" column="CUSTOMER_MANAGER_MOBILE_PHONE" jdbcType="VARCHAR"/>
+        <result property="customerServiceCode" column="CUSTOMER_SERVICE_CODE" jdbcType="VARCHAR"/>
+        <result property="customerServiceName" column="CUSTOMER_SERVICE_NAME" jdbcType="VARCHAR"/>
+        <result property="customerServiceMobilePhone" column="CUSTOMER_SERVICE_MOBILE_PHONE" jdbcType="VARCHAR"/>
+        <result property="acceptStoreCode" column="ACCEPT_STORE_CODE" jdbcType="VARCHAR"/>
+        <result property="manageStoreCode" column="MANAGE_STORE_CODE" jdbcType="VARCHAR"/>
+        <result property="acceptStoreName" column="ACCEPT_STORE_NAME" jdbcType="VARCHAR"/>
+        <result property="manageStoreName" column="MANAGE_STORE_NAME" jdbcType="VARCHAR"/>
+        <result property="province" column="PROVINCE" jdbcType="VARCHAR"/>
+        <result property="remark" column="REMARK" jdbcType="VARCHAR"/>
+        <result property="storeLevel" column="STORE_LEVEL" jdbcType="VARCHAR"/>
+        <result property="prodRepaymentWay" column="PROD_REPAYMENT_WAY" jdbcType="VARCHAR"/>
+        <result property="areaOrgid" column="AREA_ORGID" jdbcType="VARCHAR"/>
+        <result property="assignmentVersion" column="ASSIGNMENT_VERSION" jdbcType="VARCHAR"/>
+        <result property="decisionDate" column="DECISION_DATE" jdbcType="DATE"/>
+        <result property="validateState" column="VALIDATE_STATE" jdbcType="CHAR"/>
+        <result property="createBy" column="CREATE_BY" jdbcType="BIGINT"/>
+        <result property="modifyBy" column="MODIFY_BY" jdbcType="BIGINT"/>
+        <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="modifyTime" column="MODIFY_TIME" jdbcType="TIMESTAMP"/>
+        <result property="assignTime" column="assign_time" jdbcType="DATE"/>
+        <result property="flowSource" column="flow_source" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="basicColumn">
+        t1.id,
+        t1.application_number,
+        t1.application_type,
+        t1.audit_status,
+        t1.into_create_time,
+        t1.family_is_known,
+        t1.customer_source,
+        t1.customer_channel,
+        t1.decision,
+        t1.amount_limit,
+        t1.loan_type,
+        t1.loan_purpose,
+        t1.loan_purpose_detail,
+        t1.apply_period,
+        t1.app_product_type,
+        t1.app_product_name,
+        t1.prod_money_type,
+        t1.prod_service_rate,
+        t1.is_ems,
+        t1.prod_urgent_rate,
+        t1.min_app_amount,
+        t1.max_app_amount,
+        t1.month_payment,
+        t1.action_date,
+        t1.fraud_alert,
+        t1.triggered_rules,
+        t1.fraud_score,
+        t1.action_taken,
+        t1.fraud_type,
+        t1.decision_reason,
+        t1.fraud_alert_team,
+        t1.fraud_alert_user_id,
+        t1.appr_product_type,
+        t1.appr_product_name,
+        t1.agree_code,
+        t1.refuse_reason,
+        t1.credit_start,
+        t1.credit_end,
+        t1.into_credit_time,
+        t1.user_id,
+        t1.cre_user_id,
+        t1.credit_last_user_code,
+        t1.credit_last_user_name,
+        t1.audit_conclusion,
+        t1.call_type,
+        t1.case_number,
+        t1.matching_number,
+        t1.warning_minutes,
+        t1.expiry_minutes,
+        t1.customer_manager_code,
+        t1.customer_manager_name,
+        t1.customer_manager_mobile_phone,
+        t1.customer_service_code,
+        t1.customer_service_name,
+        t1.customer_service_mobile_phone,
+        t1.accept_store_code,
+        t1.manage_store_code,
+        t1.accept_store_name,
+        t1.manage_store_name,
+        t1.province,
+        t1.remark,
+        t1.store_level,
+        t1.prod_repayment_way,
+        t1.area_orgid,
+        t1.assignment_version,
+        t1.decision_date,
+        t1.validate_state,
+        t1.create_by,
+        t1.modify_by,
+        t1.create_time,
+        t1.modify_time,
+        t1.assign_time,
+        t1.flow_source
+    </sql>
+
+
+    <!-- 分页查询 -->
+    <select id="searchByPaging" resultMap="FaApplicationDTO">
+        select
+        <include refid="basicColumn"/>
+        from fa_application t1
+    </select>
+
+</mapper>

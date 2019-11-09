@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.huha.ruleengine.demo.faworking.dao.FaWorkingMapper">
+    <resultMap id="FaWorkingDTO" type="org.huha.ruleengine.demo.faworking.dto.FaWorkingDTO">
+        <result property="id" column="ID" jdbcType="BIGINT"/>
+        <result property="faId" column="fa_id" jdbcType="BIGINT"/>
+        <result property="applicationNumber" column="APPLICATION_NUMBER" jdbcType="VARCHAR"/>
+        <result property="jName" column="J_NAME" jdbcType="VARCHAR"/>
+        <result property="jAddr" column="J_ADDR" jdbcType="VARCHAR"/>
+        <result property="jAddrAreacode" column="J_ADDR_AREACODE" jdbcType="VARCHAR"/>
+        <result property="jAddrPost" column="J_ADDR_POST" jdbcType="VARCHAR"/>
+        <result property="jPhoneAreaCode" column="J_PHONE_AREA_CODE" jdbcType="VARCHAR"/>
+        <result property="jPhone" column="J_PHONE" jdbcType="VARCHAR"/>
+        <result property="jType" column="J_TYPE" jdbcType="VARCHAR"/>
+        <result property="seniority" column="SENIORITY" jdbcType="INTEGER"/>
+        <result property="jEnterT" column="J_ENTER_T" jdbcType="VARCHAR"/>
+        <result property="jDept" column="J_DEPT" jdbcType="VARCHAR"/>
+        <result property="jPosition" column="J_POSITION" jdbcType="VARCHAR"/>
+        <result property="validateState" column="VALIDATE_STATE" jdbcType="CHAR"/>
+        <result property="createBy" column="CREATE_BY" jdbcType="BIGINT"/>
+        <result property="modifyBy" column="MODIFY_BY" jdbcType="BIGINT"/>
+        <result property="createTime" column="CREATE_TIME" jdbcType="TIMESTAMP"/>
+        <result property="createTimeLong" column="CREATE_TIME_LONG" jdbcType="BIGINT"/>
+        <result property="modifyTime" column="MODIFY_TIME" jdbcType="TIMESTAMP"/>
+        <result property="jPayType" column="J_PAY_TYPE" jdbcType="VARCHAR"/>
+        <result property="jMonPayT" column="J_MON_PAY_T" jdbcType="VARCHAR"/>
+        <result property="jDetailAddr" column="J_DETAIL_ADDR" jdbcType="VARCHAR"/>
+        <result property="jFullName" column="j_full_name" jdbcType="VARCHAR"/>
+        <result property="jFullPhone" column="j_full_phone" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="basicColumn">
+        t1.id,
+        t1.fa_id,
+        t1.application_number,
+        t1.j_name,
+        t1.j_addr,
+        t1.j_addr_areacode,
+        t1.j_addr_post,
+        t1.j_phone_area_code,
+        t1.j_phone,
+        t1.j_type,
+        t1.seniority,
+        t1.j_enter_t,
+        t1.j_dept,
+        t1.j_position,
+        t1.create_time,
+        t1.j_pay_type,
+        t1.j_mon_pay_t,
+        t1.j_detail_addr,
+        t1.j_full_name,
+        t1.j_full_phone
+    </sql>
+
+
+    <!-- 进件编号查询对象  fa_working -->
+    <select id="findFaWorkingByAppNum" parameterType="java.lang.String" resultMap="FaWorkingDTO">
+        select
+        <include refid="basicColumn"/>
+        from fa_working t1
+        where
+        t1.application_number = #{applicationNumber}
+    </select>
+
+    <select id="searchByPaging"  resultMap="FaWorkingDTO">
+        select
+        <include refid="basicColumn"/>,unix_timestamp(create_time) create_time_Long
+        from fa_working t1
+    </select>
+
+
+</mapper>
