@@ -75,8 +75,8 @@ public class FaWorkingServiceTest {
         String indexName = "workinfos";
 
         CreateIndexRequest request = new CreateIndexRequest(indexName);
-//        request.settings(Settings.builder().put("index.number_of_shards", 3)
-//                .put("index.number_of_replicas", 2));
+        request.settings(Settings.builder().put("index.number_of_shards", 2)
+                .put("index.number_of_replicas", 0));
         request.mapping(mapping, XContentType.JSON);
 
         CreateIndexResponse res = restHighLevelClient.indices().create(request, RequestOptions.DEFAULT);
@@ -98,20 +98,12 @@ public class FaWorkingServiceTest {
             "        },\n" +
             "        \"jName\":\n" +
             "        {\n" +
-            "            \"type\": \"keyword\"\n" +
-            "        },\n" +
-            "        \"jNameIk\":\n" +
-            "        {\n" +
             "            \"type\": \"text\",\n" +
             "            \"term_vector\": \"with_positions_offsets\",\n" +
             "            \"analyzer\": \"ik_max_word\",\n" +
             "            \"fielddata\": true\n" +
             "        },\n" +
             "        \"jAddr\":\n" +
-            "        {\n" +
-            "            \"type\": \"keyword\"\n" +
-            "        },\n" +
-            "        \"jAddrIk\":\n" +
             "        {\n" +
             "            \"type\": \"text\",\n" +
             "            \"term_vector\": \"with_positions_offsets\",\n" +

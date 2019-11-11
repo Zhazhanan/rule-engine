@@ -96,9 +96,4 @@ public class FaWorkingDTO implements Serializable {
     @ApiModelProperty(value = "工作完整电话（区号-号码）")
     private String jFullPhone;
 
-    @ApiModelProperty(value = "工作单位全称(分词)")
-    private String jNameIk;
-
-    @ApiModelProperty(value = "工作单位地址(分词)")
-    private String jAddrIk;
 }

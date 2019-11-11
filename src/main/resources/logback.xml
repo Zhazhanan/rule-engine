@@ -10,7 +10,7 @@
     <property name="APP_NAME" value="rule-engine"/>
 
     <!-- 定义日志输出目录 -->
-    <property name="LOG_HOME" value="${LOG_HOME:-/home/jyapp/microservice_logs}/${APP_NAME}"/>
+    <property name="LOG_HOME" value="${LOG_HOME:-/home/wk/microservice_logs}/${APP_NAME}"/>
 
     <!-- 控制台输出 -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

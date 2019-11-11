@@ -12,10 +12,9 @@ public class FaWorkingRequest implements Serializable {
     private static final long serialVersionUID = 5930243073534828839L;
 
     @ApiModelProperty(value = "工作单位全称")
-    private String jNameIk;
     private String jName;
     @ApiModelProperty(value = "工作单位地址")
-    private String jAddrIk;
+    private String jAddr;
     @ApiModelProperty(value = "单位电话区号")
     private String jPhoneAreaCode;
     @ApiModelProperty(value = "单位电话")

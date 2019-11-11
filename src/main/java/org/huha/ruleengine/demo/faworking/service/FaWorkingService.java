@@ -1,6 +1,7 @@
 package org.huha.ruleengine.demo.faworking.service;
 
 import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.Operator;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.RangeQueryBuilder;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
@@ -73,17 +74,12 @@ public class FaWorkingService {
     }
 
     public void wrapQueryBuilder(BoolQueryBuilder boolQueryBuilder, FaWorkingRequest request) {
-        if (!StringUtils.isEmpty(request.getJNameIk())) {
-            boolQueryBuilder
-                    .filter(QueryBuilders.matchQuery("jNameIk",request.getJNameIk()));
-        }
         if (!StringUtils.isEmpty(request.getJName())) {
             boolQueryBuilder
-                    .filter(QueryBuilders.matchQuery("jName", request.getJName()));
-        }
-        if (!StringUtils.isEmpty(request.getJAddrIk())) {
+                    .filter(QueryBuilders.matchQuery("jName", request.getJName()).operator(Operator.AND));
+        }if (!StringUtils.isEmpty(request.getJAddr())) {
             boolQueryBuilder
-                    .filter(QueryBuilders.termQuery("jAddrIk", request.getJAddrIk()));
+                    .filter(QueryBuilders.matchQuery("jAddr", request.getJAddr()).operator(Operator.AND));
         }
         if (!StringUtils.isEmpty(request.getJPhoneAreaCode())) {
             boolQueryBuilder
