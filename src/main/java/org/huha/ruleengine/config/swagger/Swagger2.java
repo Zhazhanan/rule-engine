@@ -29,15 +29,15 @@ public class Swagger2 {
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.ant("/api/**/v1/**"))
                 .build()
-                .groupName("反欺诈接口文档V1.0")
+                .groupName("规则引擎接口文档V1.0")
                 .pathMapping("/")
                 .apiInfo(apiInfo());
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("反欺诈系统 RESTful APIs")
-                .description("反欺诈接口文档")
+                .title("规则引擎系统 RESTful APIs")
+                .description("规则引擎接口文档")
                 .version("1.0")
                 .build();
     }

@@ -1,11 +1,16 @@
 package org.huha.ruleengine.common;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
 /**
  * 全局公共异常返回值枚举类
  *
- * @author xujunqi
+ * @author wangkun
  * @date 2019/1/28 15:08
  */
+@Getter
+@AllArgsConstructor
 public enum GlobalResponseStatusEnum {
     /**
      * "成功", "0000"
@@ -39,18 +44,5 @@ public enum GlobalResponseStatusEnum {
 
     private String name;
     private String code;
-
-    GlobalResponseStatusEnum(String name, String code) {
-        this.name = name;
-        this.code = code;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCode() {
-        return code;
-    }
 
 }
