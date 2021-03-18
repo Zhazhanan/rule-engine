@@ -19,7 +19,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <com.alibaba.fastjson>1.2.30</com.alibaba.fastjson>
-        <elasticsearch>7.4.1</elasticsearch>
+        <elasticsearch>7.11.2</elasticsearch>
         <mysql.connector.java>8.0.18</mysql.connector.java>
         <mybatis-spring-boot-starter>2.1.1</mybatis-spring-boot-starter>
         <io.springfox.swagger2>2.9.2</io.springfox.swagger2>
